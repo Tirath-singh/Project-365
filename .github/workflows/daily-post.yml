@@ -1,0 +1,65 @@
+name: Daily Data Science Post
+
+on:
+  schedule:
+    - cron: "30 4 * * *" # 10:00 AM IST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create today's practical note
+        run: |
+          python - <<'PY'
+          from datetime import date
+          from pathlib import Path
+
+          topics = [
+              ("Python", "Write the smallest reproducible example before optimizing."),
+              ("SQL", "Define a table's grain before writing a join."),
+              ("Statistics", "Report an effect size and its uncertainty, not only a p-value."),
+              ("EDA", "Treat missingness as a clue about the data-generating process."),
+              ("Visualization", "Choose a chart that makes the decision clear."),
+              ("Machine Learning", "Build a baseline before adding model complexity."),
+              ("Model Evaluation", "Choose metrics from the decision and error costs."),
+              ("Feature Engineering", "Check every feature for target leakage."),
+              ("MLOps", "Version data, code, parameters, and evaluation together."),
+              ("Responsible AI", "Inspect performance across meaningful groups."),
+              ("Portfolio", "Turn a notebook into a concise decision story."),
+          ]
+          today = date.today()
+          day = today.timetuple().tm_yday
+          topic, principle = topics[(today.toordinal() - 1) % len(topics)]
+          daily = Path("daily")
+          daily.mkdir(exist_ok=True)
+          name = f"{today}-day-{day:03d}.md"
+          post = daily / name
+          if not post.exists():
+              post.write_text(
+                  f"# Day {day:03d} — {topic}\n\n"
+                  f"**Principle:** {principle}\n\n"
+                  "## Try this today\n\n"
+                  "Apply this idea to one current project and add a chart, result, or code snippet in a follow-up commit.\n\n"
+                  f"#Project365 #{topic.replace(' ', '')}\n",
+                  encoding="utf-8",
+              )
+          index = Path("INDEX.md")
+          if not index.exists():
+              index.write_text("# Project 365 index\n\n| Date | Day | Topic | Post |\n|---|---:|---|---|\n", encoding="utf-8")
+          row = f"| {today} | {day:03d} | {topic} | [Read](daily/{name}) |"
+          text = index.read_text(encoding="utf-8")
+          if row not in text:
+              index.write_text(text.rstrip() + "\n" + row + "\n", encoding="utf-8")
+          PY
+      - name: Commit the daily post
+        run: |
+          git config user.name "Tirath Singh"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add daily INDEX.md
+          git diff --cached --quiet || git commit -m "docs: Project 365 daily note"
+          git push
