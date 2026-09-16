@@ -7,3 +7,4 @@
 | 2026-09-13 | 256 | Python | [Read](daily/2026-09-13-day-256.md) |
 | 2026-09-14 | 257 | SQL | [Read](daily/2026-09-14-day-257.md) |
 | 2026-09-15 | 258 | Statistics | [Read](daily/2026-09-15-day-258.md) |
+| 2026-09-16 | 259 | EDA | [Read](daily/2026-09-16-day-259.md) |
