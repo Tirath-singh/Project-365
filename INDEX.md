@@ -9,3 +9,4 @@
 | 2026-09-15 | 258 | Statistics | [Read](daily/2026-09-15-day-258.md) |
 | 2026-09-16 | 259 | EDA | [Read](daily/2026-09-16-day-259.md) |
 | 2026-09-17 | 260 | Visualization | [Read](daily/2026-09-17-day-260.md) |
+| 2026-09-18 | 261 | Machine Learning | [Read](daily/2026-09-18-day-261.md) |
