@@ -10,3 +10,4 @@
 | 2026-09-16 | 259 | EDA | [Read](daily/2026-09-16-day-259.md) |
 | 2026-09-17 | 260 | Visualization | [Read](daily/2026-09-17-day-260.md) |
 | 2026-09-18 | 261 | Machine Learning | [Read](daily/2026-09-18-day-261.md) |
+| 2026-09-19 | 262 | Model Evaluation | [Read](daily/2026-09-19-day-262.md) |
