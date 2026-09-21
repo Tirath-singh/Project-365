@@ -12,3 +12,4 @@
 | 2026-09-18 | 261 | Machine Learning | [Read](daily/2026-09-18-day-261.md) |
 | 2026-09-19 | 262 | Model Evaluation | [Read](daily/2026-09-19-day-262.md) |
 | 2026-09-20 | 263 | Feature Engineering | [Read](daily/2026-09-20-day-263.md) |
+| 2026-09-21 | 264 | MLOps | [Read](daily/2026-09-21-day-264.md) |
