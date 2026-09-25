@@ -16,3 +16,4 @@
 | 2026-09-22 | 265 | Responsible AI | [Read](daily/2026-09-22-day-265.md) |
 | 2026-09-23 | 266 | Portfolio | [Read](daily/2026-09-23-day-266.md) |
 | 2026-09-24 | 267 | Python | [Read](daily/2026-09-24-day-267.md) |
+| 2026-09-25 | 268 | SQL | [Read](daily/2026-09-25-day-268.md) |
